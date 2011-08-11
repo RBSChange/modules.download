@@ -1,0 +1,22 @@
+treechildren::-moz-tree-image(modules_download_documentcard){
+	list-style-image: url(/changeicons/small/documentcard.png);
+}
+treechildren::-moz-tree-image(modules_download_treefolder){
+	list-style-image: url(/changeicons/small/documentcard-folder.png);
+}
+treechildren::-moz-tree-image(modules_download_categoryfolder){
+	list-style-image: url(/changeicons/small/category-folder.png);
+}
+treechildren::-moz-tree-image(modules_download_category){
+	list-style-image: url(/changeicons/small/category.png);
+}
+
+wdialog[template="download_ImportMedias"] .dialog-header{
+	background: url(/changeicons/small/media.png) transparent center  left no-repeat !important;
+}
+wdialog[template="download_TopicSelection"] .dialog-header{
+	background: url(/changeicons/small/topic.png) transparent center  left no-repeat !important;
+}
+wdialog[template="download_CategorySelection"] .dialog-header{
+	background: url(/changeicons/small/category.png) transparent center  left no-repeat !important;
+}

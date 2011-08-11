@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<bindings xmlns="http://www.mozilla.org/xbl" xmlns:xbl="http://www.mozilla.org/xbl" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<binding id="cBaseDialog" extends="core.wDialog#cRessourceDialog">
+		<implementation>
+			<method name="onOpen">
+				<parameter name="sender" />
+				<parameter name="parameters" />
+				<body><![CDATA[
+					this.sender = sender;
+					this.parameters = parameters;
+					document.getAnonymousElementByAttribute(this, 'class', 'dialog-title').setAttribute('value', this.titleText);
+					this.onInitialize();
+				]]></body>
+			</method>
+		
+			<method name="getSelectedIds">
+				<body><![CDATA[
+					var ids = [];
+					var items = this.getElementByAnonId("selectedList").getElementsByTagName('row');
+					if (items.length == 0)
+					{
+						return;
+					}
+					
+					for (var i = 0; i < items.length; i++) 
+					{ 
+						if (items[i].hasAttribute("value"))
+						{
+							ids.push(items[i].getAttribute("value"));
+						}
+					}
+					
+					return ids;
+				]]></body>
+			</method>
+			
+			<method name="onDragEnter">
+				<parameter name="event" />		
+				<body><![CDATA[		
+					this.mDropData = null;
+					var dropNodeInfo = event.dataTransfer.mozGetDataAt("application/json-documentidtype-array", 0);
+					if (dropNodeInfo)
+					{
+						var dropNode = wCore.parseJSON(dropNodeInfo);
+						var filterItems = this.filterAllowed(dropNode);
+						if (filterItems.length > 0)
+						{
+							this.mDropData = filterItems;
+							wCore.debug(wCore.dump(this.mDropData));
+						}
+					}
+					event.preventDefault();
+				]]></body>	
+			</method>
+			
+			<method name="handleSelected">
+				<parameter name="list" />
+				<body><![CDATA[
+					var selectedItems = list.getSelectedItems();
+					var filterItems = [];
+					var indexedItems = {};
+					for (var i = 0; i < selectedItems.length ; i++) 
+					{
+						filterItems.push([ selectedItems[i].id, selectedItems[i].type ]);
+						indexedItems['_'+ selectedItems[i].id ] = {label: selectedItems[i].label, id: selectedItems[i].id};
+					}
+					
+					filterItems = this.filterAllowed(filterItems);
+					if (filterItems.length == 0)
+					{
+                       	this.setErrorMessage("${transui:m.uixul.bo.dialog.ressource-selector-error-not-allowed,ucf,js}");
+						return;
+					}
+					
+					for (var i = 0; i < filterItems.length ; i++) 
+					{
+						if (this.getElementByAnonId('listitem_' + filterItems[i]))
+						{
+							continue;
+						}
+						this.addItem(indexedItems['_'+ filterItems[i]]);
+					}
+				]]></body>
+			</method>
+			
+			<method name="filterAllowed">
+				<parameter name="documentidtype" />
+				<body><![CDATA[
+					var result = [];
+					var allowtypes = this.parameters.allow.split(",");
+					for (var i =0; i < documentidtype.length; i++)
+			  		{
+			  			var data = documentidtype[i];
+			  			if (allowtypes.length == 0)
+			  			{
+			  				result.push(data[0]);
+			  			}
+			  			else
+			  			{ 
+				  			for (var y = 0; y < allowtypes.length; y++)
+				  			{
+				  				if (data[1] == allowtypes[y])
+				  				{
+				  					result.push(data[0]);
+				  					break;
+				  				}
+				  			}
+				  		}
+			  		}
+			  		return result;
+				]]></body>
+			</method>
+		</implementation>
+	</binding>
+	<binding id="cImportMediaDialog" extends="modules.download.cImportMediasDialog#cBaseDialog">
+		<implementation>
+			<field name="titleText">"${transui:m.download.bo.general.media-selection-title,ucf,js}"</field>
+			<method name="onOk">
+				<body><![CDATA[
+					var params = this.parameters.finalParams;
+					params.mediaIds = this.getSelectedIds();
+					this.sender.openTopicSelectionDialog(params);
+				]]></body>
+			</method>
+		</implementation>
+	</binding>
+	<binding id="cTopicSelectionDialog" extends="modules.download.cImportMediasDialog#cBaseDialog">
+		<implementation>
+			<field name="titleText">"${transui:m.download.bo.general.topic-selection-title,ucf,js}"</field>
+			<method name="onOk">
+				<parameter name="list" />
+				<body><![CDATA[
+					var params = this.parameters.finalParams;
+					params.topicIds = this.getSelectedIds();
+					this.sender.openCategorySelectionDialog(params);
+				]]></body>
+			</method>
+		</implementation>
+	</binding>
+	<binding id="cCategorySelectionDialog" extends="modules.download.cImportMediasDialog#cBaseDialog">
+		<implementation>
+			<field name="titleText">"${transui:m.download.bo.general.category-selection-title,ucf,js}"</field>
+			<method name="onOk">
+				<parameter name="list" />
+				<body><![CDATA[
+					var params = this.parameters.finalParams;
+					params.categoryIds = this.getSelectedIds();
+					this.sender.importMedias(params);
+				]]></body>
+			</method>
+		</implementation>
+	</binding>
+</bindings>

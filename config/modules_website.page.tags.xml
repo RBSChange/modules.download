@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tags>
+	<tag labeli18n="m.download.bo.blocks.documentcard.title" icon="documentcard">functional_download_documentcard-detail</tag>
+	<tag labeli18n="m.download.bo.blocks.documentcardalllist.title" icon="list-block">contextual_website_website_modules_download_documentcardalllist</tag>
+	<tag labeli18n="m.download.bo.blocks.documentcardcontextuallist.title" icon="list-block">functional_download_documentcard-list</tag>
+	<tag labeli18n="m.download.bo.blocks.category.title" icon="category">contextual_website_website_modules_download_category</tag>
+</tags>

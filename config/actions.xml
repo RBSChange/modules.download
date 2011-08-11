@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+	<action name="createFolder">
+		<parameter name="listWidget" />
+		<body><![CDATA[this.createDocumentEditor('modules_download_folder', listWidget.getSelectedItems()[0].id);]]></body>
+	</action>
+	<action name="createTreefolder">
+		<parameter name="listWidget" />
+		<body><![CDATA[this.createDocumentEditor('modules_download_treefolder', listWidget.getSelectedItems()[0].id);]]></body>
+	</action>
+	<action name="createDocumentcard">
+		<parameter name="listWidget" />
+		<body><![CDATA[this.createDocumentEditor('modules_download_documentcard', listWidget.getSelectedItems()[0].id);]]></body>
+	</action>
+	<action name="createCategoryfolder">
+		<parameter name="listWidget" />
+		<body><![CDATA[this.createDocumentEditor('modules_download_categoryfolder', listWidget.getSelectedItems()[0].id);]]></body>
+	</action>
+	<action name="createCategory">
+		<parameter name="listWidget" />
+		<body><![CDATA[this.createDocumentEditor('modules_download_category', listWidget.getSelectedItems()[0].id);]]></body>
+	</action>
+	<action name="initDefaultStructure">
+		<parameter name="listWidget" />
+		<body><![CDATA[
+			try
+			{
+				var params = { 
+					module: 'website', 
+					allow: 'modules_website_topic,modules_website_systemtopic', 
+					single: true, 
+					originalModule: this, 
+					scriptModuleName: 'download', 
+					scriptName: 'globalDefaultStructure'
+				};
+				getController().openModalDialog(this, 'selectStructureRoot', params);
+			}
+			catch (e)
+			{
+				wCore.error('catalog.initDefaultStructure', [], e);
+			}
+		]]></body>
+	</action>
+	<action name="initLocalStructure">
+		<parameter name="listWidget" />
+		<body><![CDATA[
+			try
+			{
+				var params = { 
+					module: 'website', 
+					allow: 'modules_website_topic,modules_website_systemtopic', 
+					single: true, 
+					originalModule: this, 
+					scriptModuleName: 'download', 
+					scriptName: 'localDefaultStructure'
+				};
+				getController().openModalDialog(this, 'selectStructureRoot', params);
+			}
+			catch (e)
+			{
+				wCore.error('catalog.initDefaultStructure', [], e);
+			}
+		]]></body>
+	</action>
+	<action name="openImportMediasDialog">
+		<parameter name="listWidget" />
+		<body><![CDATA[
+			try
+			{
+				if (!this.hasAttribute('data-allowAttributeForFile'))
+				{
+					var contents = wCore.executeJSON('download', 'GetAllowAttributes').contents;
+					this.setAttribute('data-allowAttributeForFile', contents.file);
+					this.setAttribute('data-allowAttributeForTopic', contents.topic);
+					this.setAttribute('data-allowAttributeForCategory', contents.category);
+				}
+			
+				var params = { 
+					finalParams: {parentref: listWidget.getSelectedItems()[0].id},
+					allow: this.getAttribute('data-allowAttributeForFile'),
+					module: 'media',
+					single: false
+				};
+				getController().openModalDialog(this, 'download_ImportMedias', params);
+			}
+			catch (e)
+			{
+				wCore.error('download.openMediaImportDialog', [], e);
+			}
+		]]></body>
+	</action>
+	<action name="openTopicSelectionDialog">
+		<parameter name="finalParams" />
+		<body><![CDATA[
+			try
+			{
+				params = {
+					finalParams: finalParams,
+					allow: this.getAttribute('data-allowAttributeForTopic'),
+					module: 'website',
+					single: false
+				};
+				getController().closeModalDialog(true);
+				var me = this;
+				setTimeout(function() { getController().openModalDialog(me, 'download_TopicSelection', params); }, 100);
+			}
+			catch (e)
+			{
+				wCore.error('download.openTopicSelectionDialog', [], e);
+			}
+		]]></body>
+	</action>
+	<action name="openCategorySelectionDialog">
+		<parameter name="finalParams" />
+		<body><![CDATA[
+			try
+			{
+				params = {
+					finalParams: finalParams,
+					allow: this.getAttribute('data-allowAttributeForCategory'),
+					module: 'download',
+					single: false
+				};
+				getController().closeModalDialog(true);
+				var me = this;
+				setTimeout(function() { getController().openModalDialog(me, 'download_CategorySelection', params); }, 100);
+			}
+			catch (e)
+			{
+				wCore.error('download.openCategorySelectionDialog', [], e);
+			}
+		]]></body>
+	</action>
+	<action name="importMedias">
+		<parameter name="params" />
+		<body><![CDATA[
+			getController().closeModalDialog(true);
+			this.executeJSON('ImportMedias', params);
+		]]></body>
+	</action>
+	<action name="onImportMediasSuccess">
+		<parameter name="result"/>
+		<body><![CDATA[
+			this.refresh();
+		]]></body>
+	</action>			
+	<action name="onImportMediasError">
+		<parameter name="result"/>
+		<body><![CDATA[
+			this.refresh();
+			this.showErrorMessage(result.contents.errorMessage, result.contents.errorStackTrace);
+		]]></body>
+	</action>
+	<handler name="comment-documentcard" event="registerDocumentEditor"><![CDATA[
+		// Action added by comment.implement-on-document
+		var editor = event.originalTarget;
+		switch (editor.documentname)
+		{
+			case 'documentcard':
+				editor.addTab('comments', '&modules.comment.bo.doceditor.tab.Comments;', 'comments');
+				if (getController().checkModuleVersion('twitterconnect', '3.0.3'))
+				{
+					editor.addTab('tweets', "&modules.twitterconnect.bo.doceditor.tab.Tweets;", 'tweet');
+				}
+				break;
+					
+			case 'treefolder':
+			case 'category':
+				if (getController().checkModuleVersion('twitterconnect', '3.0.3'))
+				{
+					editor.addTab('containertweets', "&modules.twitterconnect.bo.doceditor.tab.Automatic-tweets;", 'tweet-planner');
+				}
+				break;
+		}
+	]]></handler>
+</actions>

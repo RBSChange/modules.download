@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document xmlns="http://www.rbs.fr/schema/change-document/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.rbs.fr/schema/change-document/1.0 http://www.rbschange.fr/static/schema/change-document/3.5.xsd"
+	model-version="3.5" use-rewrite-url="true" indexable="true" icon="documentcard">
+	<properties>
+		<add name="file" type="modules_media/media" min-occurs="1" />
+		<add name="description" type="XHTMLFragment" localized="true" />
+		<add name="visual" type="modules_media/media" />
+		<add name="topic" type="modules_website/topic" max-occurs="-1" />
+		<add name="website" type="modules_website/website" max-occurs="-1" />
+		<add name="category" type="modules_download/category" max-occurs="-1" inverse="true" />
+	</properties>
+	<statuses default="ACTIVE" />
+</document>

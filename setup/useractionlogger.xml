@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <binding fileName="modules/useractionlogger/persistentdocument/import/useractionlogger_binding.xml"/>
+  <actiondef modulename="download" actionname="insert.treefolder" label="m.download.bo.useractionlogger.insert-treefolder"/>
+  <actiondef modulename="download" actionname="insert.documentcard" label="m.download.bo.useractionlogger.insert-documentcard"/>
+  <actiondef modulename="download" actionname="update.documentcard" label="m.download.bo.useractionlogger.update-documentcard"/>
+  <actiondef modulename="download" actionname="delete.documentcard" label="m.download.bo.useractionlogger.delete-documentcard"/>
+  <actiondef modulename="download" actionname="move.documentcard" label="m.download.bo.useractionlogger.move-documentcard"/>
+  <actiondef modulename="download" actionname="delete.treefolder" label="m.download.bo.useractionlogger.delete-treefolder"/>
+  <actiondef modulename="download" actionname="delete.category" label="m.download.bo.useractionlogger.delete-category"/>
+  <actiondef modulename="download" actionname="delete.categoryfolder" label="m.download.bo.useractionlogger.delete-categoryfolder"/>
+  <actiondef modulename="download" actionname="deactivated.documentcard" label="m.download.bo.useractionlogger.deactivated-documentcard"/>
+  <actiondef modulename="download" actionname="reactivate.documentcard" label="m.download.bo.useractionlogger.reactivate-documentcard"/>
+</script>

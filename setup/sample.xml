@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+	<binding fileName="modules/website/persistentdocument/import/website_binding.xml" />
+	<binding fileName="modules/media/persistentdocument/import/media_binding.xml" />
+	<binding fileName="modules/download/persistentdocument/import/download_binding.xml" />
+	
+	<website byTag="default_modules_website_default-website">
+		<execute method="setDocumentIdAttribute" />
+		<topic byLabel="Documents à télécharger" id="t1">
+			<topic byLabel="Plans d'accès RBS" id="t2" />
+			<topic byLabel="RBS Change" id="t3" />
+			<execute method="setDocumentIdAttribute" />
+			<binding fileName="modules/download/setup/localDefaultStructure.xml" />
+			<binding fileName="modules/download/setup/globalDefaultStructure.xml" />
+		</topic>
+	</website>
+	
+	<rootfolder module="media">
+		<folder byLabel="Exemple documents à télécharger">
+			<media path="modules/download/setup/sample/plan_icone.gif"
+				byLabel="Icone plan d'accès" title="Icone plan d'accès" id="m1" />
+			<media path="modules/download/setup/sample/Plan_d_acces_RBS_Paris.pdf"
+				byLabel="Plan d'accès RBS Paris" title="Plan d'accès RBS Paris" id="m2" />
+			<media path="modules/download/setup/sample/Plan_d_acces_RBS_Siege.pdf"
+				byLabel="Plan d'accès RBS Siège" title="Plan d'accès RBS Siège" id="m3" />
+			<media path="modules/download/setup/sample/RBS_Change.docx"
+				byLabel="Descriptif RBS Change" title="Descriptif RBS Change" id="m4" />
+		</folder>
+	</rootfolder>
+	
+  	<rootfolder module="download">
+		<categoryfolder byLabel="Catégories">
+			<category byLabel="Plans" id="c1" />
+			<category byLabel="RBS Change" id="c2" />
+		</categoryfolder>
+		<treefolder byLabel="Documents à télécharger">
+			<treefolder byLabel="Accès">
+				<attribute name="description"><![CDATA[<p class="normal">Plan d'accès RBS Siège à Entzheim.</p>]]></attribute>
+				<documentcard byLabel="Plan d'accès RBS Siège" topic-refids="t1,t2" category-refids="c1" file-refid="m3" visual-refid="m1" description-attr="" />
+				<documentcard byLabel="Plan d'accès RBS Siège (sans icone)" topic-refids="t2" category-refids="c1" file-refid="m3" description-attr="" />
+				<documentcard byLabel="Plan d'accès RBS Siège (sans description)" topic-refids="t1" category-refids="c1" file-refid="m3" visual-refid="m1" />	
+				<attribute name="description"><![CDATA[<p class="normal">Plan d'accès RBS Paris.</p>]]></attribute>
+				<documentcard byLabel="Plan d'accès RBS Paris" topic-refids="t2" category-refids="c1" file-refid="m2" visual-refid="m1" description-attr="" />
+			</treefolder>
+			<attribute name="description"><![CDATA[<p class="normal">RBS Change : CMS Open Source, solution e-Commerce Open Source édité par RBS.</p>]]></attribute>
+			<documentcard byLabel="Descriptif RBS Change" topic-refids="t1,t3" category-refids="c2" file-refid="m4" visual-refid="m1" description-attr="" />
+		</treefolder>
+	</rootfolder>
+</script>

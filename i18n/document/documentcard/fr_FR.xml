@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.download.document.documentcard" lcid="fr_FR">
+	<include id="m.generic.document.document" />
+	<key id="document-name">document à télécharger</key>
+	<key id="label">nom</key>
+	<key id="label-help">Nom du document à télécharger.</key>
+	<key id="file">fichier</key>
+	<key id="file-help">Fichier à télécharger.</key>
+	<key id="description">description</key>
+	<key id="description-help">Description du document, affichée sur le site.</key>
+	<key id="visual">visuel</key>
+	<key id="visual-help">Visuel à afficher sur le site pour illustrer le document.</key>
+	<key id="topic">rubriques</key>
+	<key id="topic-help">Rubriques dans lesquelles implanter ce document.</key>
+	<key id="category">catégories</key>
+	<key id="category-help">Catégories du document.</key>
+</i18n>

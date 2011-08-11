@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.download.bo.general" lcid="fr_FR">
+	<key id="module-name">documents à télécharger</key>
+	<key id="system-folder-name">documents à télécharger</key>
+	<key id="unknown-structure-initialization-script">Script d'initialisation "{script}" inconnu.</key>
+	<key id="invalid-topic">Vous devez sélectionner une rubrique.</key>
+	<key id="some-pages-already-initialized">Certaines des pages globales ont déjà été initialisées pour ce site.</key>
+	<key id="topic-already-contains-some-of-this-pages">Cette rubrique contient déjà certaines des pages.</key>
+	<key id="media-selection-title">sélection des médias à importer</key>
+	<key id="topic-selection-title">sélection des rubrique dans lesquelles implanter les documents</key>
+	<key id="category-selection-title">sélection des catégories dans lesquelles placer les documents</key>
+</i18n>

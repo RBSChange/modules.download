@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+	<binding fileName="modules/website/persistentdocument/import/website_binding.xml" />
+
+	<topic byDocumentId-attr="">
+		<page byLabel="Liste des documents du site" indexingstatus="false"
+			description="Documents du site &quot;{download_documentcardAllList.label}&quot;">
+			<tag name="contextual_website_website_modules_download_documentcardalllist" />
+			<changecontent for="content-block">
+				<changeblock type="modules_download_DocumentcardAllList" />
+			</changecontent>
+			<changecontent for="sidebar-block">
+				<changeblock type="modules_download_CategoryAllList" />
+			</changecontent>
+		</page>
+		<page byLabel="Détail d'une catégorie" indexingstatus="false" navigationVisibility="hidden"
+			metatitle="Catégorie &quot;{download_category.label}&quot;" description="{download_category.description}">
+			<tag name="contextual_website_website_modules_download_category" />
+			<changecontent for="content-block">
+				<changeblock type="modules_download_Category" />
+			</changecontent>
+		</page>
+	</topic>
+</script>

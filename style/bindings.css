@@ -1,0 +1,9 @@
+wdialog[template="download_ImportMedias"]{
+	-moz-binding: url(binding:modules.download.cImportMediasDialog#cImportMediaDialog);
+}
+wdialog[template="download_TopicSelection"]{
+	-moz-binding: url(binding:modules.download.cImportMediasDialog#cTopicSelectionDialog);
+}
+wdialog[template="download_CategorySelection"]{
+	-moz-binding: url(binding:modules.download.cImportMediasDialog#cCategorySelectionDialog);
+}

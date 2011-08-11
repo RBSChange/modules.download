@@ -1,0 +1,9 @@
+<h1 tal:condition="blockTitle" change:h="">${blockTitle}</h1>
+
+<tal:block change:include="type 'html'; transmitAll 'true'" module="download" template="Download-Inc-Documentcard-List" />
+
+<ul class="mini-navigation" tal:condition="linkToDetailPage">
+	<li>
+		<a change:link="tag contextual_website_website_modules_download_documentcardalllist">${trans:m.download.fo.view-complete-list,ucf}</a>
+	</li>
+</ul>

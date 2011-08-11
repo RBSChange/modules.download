@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.download.bo.useractionlogger" lcid="fr_FR">
+  <key id="insert-treefolder">insert.treefolder {documentlabel}</key>
+  <key id="log-insert-treefolder">log insert treefolder</key>
+  <key id="insert-documentcard">insert.documentcard {lang} {documentlabel}</key>
+  <key id="log-insert-documentcard">log insert documentcard</key>
+  <key id="update-documentcard">update.documentcard {lang} {documentlabel}</key>
+  <key id="log-update-documentcard">log update documentcard</key>
+  <key id="delete-documentcard">delete.documentcard {documentlabel} {lang}</key>
+  <key id="log-delete-documentcard">log delete documentcard</key>
+  <key id="move-documentcard">move.documentcard {destinationlabel} {lang} {documentlabel}</key>
+  <key id="log-move-documentcard">log move documentcard</key>
+  <key id="delete-treefolder">delete.treefolder {documentlabel}</key>
+  <key id="log-delete-treefolder">log delete treefolder</key>
+  <key id="delete-category">delete.category {documentlabel} {lang}</key>
+  <key id="log-delete-category">log delete category</key>
+  <key id="delete-categoryfolder">delete.categoryfolder {documentlabel}</key>
+  <key id="log-delete-categoryfolder">log delete categoryfolder</key>
+  <key id="deactivated-documentcard">deactivated.documentcard {lang} {documentlabel}</key>
+  <key id="log-deactivated-documentcard">log deactivated documentcard</key>
+  <key id="reactivate-documentcard">reactivate.documentcard {lang} {documentlabel}</key>
+  <key id="log-reactivate-documentcard">log reactivate documentcard</key>
+</i18n>
