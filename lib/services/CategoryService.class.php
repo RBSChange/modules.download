@@ -123,7 +123,7 @@ class download_CategoryService extends f_persistentdocument_DocumentService
 	}
 	
 	/**
-	 * @param event_persistentdocument_highlight $document
+	 * @param download_persistentdocument_category $document
 	 * @return string[]
 	 */
 	public function getDocumentsModelNamesForTweet($document)
@@ -132,7 +132,7 @@ class download_CategoryService extends f_persistentdocument_DocumentService
 	}
 	
 	/**
-	 * @param event_persistentdocument_highlight $document
+	 * @param download_persistentdocument_category $document
 	 * @return boolean
 	 */
 	public function canSendTweetOnContainedDocumentPublish($document)
@@ -141,7 +141,7 @@ class download_CategoryService extends f_persistentdocument_DocumentService
 	}
 	
 	/**
-	 * @param event_persistentdocument_highlight $document
+	 * @param download_persistentdocument_category $document
 	 * @param string $modelName
 	 * @return integer[]
 	 */
@@ -153,7 +153,7 @@ class download_CategoryService extends f_persistentdocument_DocumentService
 	}
 	
 	/**
-	 * @param event_persistentdocument_highlight $document
+	 * @param download_persistentdocument_category $document
 	 * @return website_persistentdocument_website[]
 	 */
 	public function getWebsitesForTweets($document)

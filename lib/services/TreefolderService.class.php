@@ -53,7 +53,7 @@ class download_TreefolderService extends generic_FolderService
 	}
 	
 	/**
-	 * @param event_persistentdocument_highlight $document
+	 * @param download_persistentdocument_treefolder $document
 	 * @return string[]
 	 */
 	public function getDocumentsModelNamesForTweet($document)
@@ -62,7 +62,7 @@ class download_TreefolderService extends generic_FolderService
 	}
 	
 	/**
-	 * @param event_persistentdocument_highlight $document
+	 * @param download_persistentdocument_treefolder $document
 	 * @return boolean
 	 */
 	public function canSendTweetOnContainedDocumentPublish($document)
@@ -71,7 +71,7 @@ class download_TreefolderService extends generic_FolderService
 	}
 	
 	/**
-	 * @param event_persistentdocument_highlight $document
+	 * @param download_persistentdocument_treefolder $document
 	 * @param string $modelName
 	 * @return integer[]
 	 */
@@ -83,7 +83,7 @@ class download_TreefolderService extends generic_FolderService
 	}
 	
 	/**
-	 * @param event_persistentdocument_highlight $document
+	 * @param download_persistentdocument_treefolder $document
 	 * @return website_persistentdocument_website[]
 	 */
 	public function getWebsitesForTweets($document)
