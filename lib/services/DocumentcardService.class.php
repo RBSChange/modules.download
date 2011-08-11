@@ -403,7 +403,7 @@ class download_DocumentcardService extends f_persistentdocument_DocumentService
 	}
 
 	/**
-	 * @param blog_persistentdocument_post $document
+	 * @param download_persistentdocument_documentcard $document
 	 * @return f_persistentdocument_PersistentDocument[]
 	 */
 	public function getContainersForTweets($document)
