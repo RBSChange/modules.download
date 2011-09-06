@@ -5,7 +5,7 @@
 		<property name="author" labeli18n="m.uixul.bo.doceditor.property.author" />
 		<property name="creationdate" labeli18n="m.uixul.bo.doceditor.property.creationdate" />
 	</section>
-	<section name="content" labeli18n="modules.documentcard.document.documentcard.File" image="{IconsBase}/small/media.png">
+	<section name="content" labeli18n="modules.download.document.documentcard.File" image="{IconsBase}/small/media.png">
 		<property name="mimetype" labeli18n="modules.media.bo.doceditor.property.Mimetype" />
 		<property name="size" labeli18n="modules.media.bo.doceditor.property.Size" />
 		<property name="previewimgurl" labeli18n="modules.media.bo.doceditor.property.Previewimgurl" />
