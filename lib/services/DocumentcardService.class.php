@@ -314,7 +314,7 @@ class download_DocumentcardService extends f_persistentdocument_DocumentService
 	 */
 	public function getDisplayPage($document)
 	{
-		$request = HttpController::getInstance()->getContext()->getRequest();
+		$request = change_Controller::getInstance()->getContext()->getRequest();
 		if ($request->hasModuleParameter('documentcard', 'topicId'))
 		{
 			$topicId = $request->getModuleParameter('documentcard', 'topicId');

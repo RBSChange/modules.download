@@ -5,10 +5,10 @@
 		<property name="author" labeli18n="m.uixul.bo.doceditor.property.author" />
 		<property name="creationdate" labeli18n="m.uixul.bo.doceditor.property.creationdate" />
 	</section>
-	<section name="content" labeli18n="modules.download.document.documentcard.File" image="{IconsBase}/small/media.png">
-		<property name="mimetype" labeli18n="modules.media.bo.doceditor.property.Mimetype" />
-		<property name="size" labeli18n="modules.media.bo.doceditor.property.Size" />
-		<property name="previewimgurl" labeli18n="modules.media.bo.doceditor.property.Previewimgurl" />
+	<section name="content" labeli18n="m.download.document.documentcard.file" image="{IconsBase}/small/media.png">
+		<property name="mimetype" labeli18n="m.media.bo.doceditor.property.mimetype" />
+		<property name="size" labeli18n="m.media.bo.doceditor.property.size" />
+		<property name="previewimgurl" labeli18n="m.media.bo.doceditor.property.previewimgurl" />
 	</section>
 	<section name="publication" linkedtab="publication" labeli18n="m.uixul.bo.doceditor.section.status" image="{IconsBase}/small/status.png">
 		<property name="status" labeli18n="m.uixul.bo.doceditor.property.status" />

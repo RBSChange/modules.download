@@ -17,20 +17,20 @@ class download_BlockDocumentcardAction extends website_BlockAction
 			return website_BlockView::NONE;
 		}
 	
-		$context = $this->getPage();
+		$context = $this->getContext();
 		$isOnDetailPage = TagService::getInstance()->hasTag($context->getPersistentPage(), 'functional_download_documentcard-detail');
 		$doc = $this->getDocumentParameter();
 		if (!($doc instanceof download_persistentdocument_documentcard) || !$doc->isPublished())
 		{
 			if ($isOnDetailPage && !$this->isInBackofficePreview())
 			{
-				HttpController::getInstance()->redirect("website", "Error404");
+				change_Controller::getInstance()->redirect('website', 'Error404');
 			}
 			return website_BlockView::NONE;
 		}
 		else if ($isOnDetailPage)
 		{
-			$this->getContext()->addCanonicalParam('topicId', null, 'download');
+			$context->addCanonicalParam('topicId', null, 'download');
 		}
 		$config = $this->getConfiguration();
 		$request->setAttribute('doc', $this->getDocumentParameter());
@@ -40,7 +40,6 @@ class download_BlockDocumentcardAction extends website_BlockAction
 		$request->setAttribute('navigationPosition', $config->getNavigationPosition());
 		$request->setAttribute('linkToTopic', $config->getLinkToTopic());
 		$request->setAttribute('linkToAll', $config->getLinkToAll());
-		
 		
 		$displayMode = $config->getDisplayMode();
 		return $displayMode ? $displayMode : website_BlockView::SUCCESS;
