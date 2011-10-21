@@ -17,7 +17,7 @@ class download_BlockCategoryAction extends download_BlockAbstractDocumentcardLis
 			return website_BlockView::NONE;
 		}
 		
-		$website = website_WebsiteModuleService::getInstance()->getCurrentWebsite();
+		$website = website_WebsiteService::getInstance()->getCurrentWebsite();
 		if ($request->hasParameter('topicId'))
 		{
 			$topic = website_persistentdocument_topic::getInstanceById($request->getParameter('topicId'));
@@ -55,7 +55,7 @@ class download_BlockCategoryAction extends download_BlockAbstractDocumentcardLis
 	{
 		$bs = download_DocumentcardService::getInstance();
 		$parentDoc = $this->getParentDoc($request);
-		$website = website_WebsiteModuleService::getInstance()->getCurrentWebsite();
+		$website = website_WebsiteService::getInstance()->getCurrentWebsite();
 		if ($request->hasAttribute('topic'))
 		{
 			return $bs->getPublishedCountByCategoryAndTopic($parentDoc, $request->getAttribute('topic'));
@@ -76,7 +76,7 @@ class download_BlockCategoryAction extends download_BlockAbstractDocumentcardLis
 	{
 		$bs = download_DocumentcardService::getInstance();
 		$parentDoc = $this->getParentDoc($request);
-		$website = website_WebsiteModuleService::getInstance()->getCurrentWebsite();
+		$website = website_WebsiteService::getInstance()->getCurrentWebsite();
 		if ($request->hasAttribute('topic'))
 		{
 			return $bs->getPublishedByCategoryAndTopic($parentDoc, $request->getAttribute('topic'), $offset, $itemsPerPage);

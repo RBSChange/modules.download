@@ -11,7 +11,7 @@ class download_BlockDocumentcardAllListAction extends download_BlockAbstractDocu
 	 */
 	protected function getParentDoc($request)
 	{
-		return website_WebsiteModuleService::getInstance()->getCurrentWebsite();
+		return website_WebsiteService::getInstance()->getCurrentWebsite();
 	}
 	
 	/**

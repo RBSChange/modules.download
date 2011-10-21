@@ -18,7 +18,7 @@ class download_BlockCategoryAllListAction extends website_BlockAction
 		}
 		
 		$cs = download_CategoryService::getInstance();
-		$website = website_WebsiteModuleService::getInstance()->getCurrentWebsite();
+		$website = website_WebsiteService::getInstance()->getCurrentWebsite();
 		$request->setAttribute('website', $website);
 		$categoriesInfos = $cs->getPublishedInfosByWebsite($website);
 		if (count($categoriesInfos) > 0)
