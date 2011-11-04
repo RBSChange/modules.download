@@ -2,8 +2,6 @@
 <i18n baseKey="m.download.bo.general" lcid="fr_FR">
 	<key id="module-name">documents à télécharger</key>
 	<key id="system-folder-name">documents à télécharger</key>
-	<key id="unknown-structure-initialization-script">Script d'initialisation "{script}" inconnu.</key>
-	<key id="invalid-topic">Vous devez sélectionner une rubrique.</key>
 	<key id="some-pages-already-initialized">Certaines des pages globales ont déjà été initialisées pour ce site.</key>
 	<key id="topic-already-contains-some-of-this-pages">Cette rubrique contient déjà certaines des pages.</key>
 	<key id="media-selection-title">sélection des médias à importer</key>
