@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.download.bo.blocks.category" lcid="en_GB">
+	<include id="m.download.bo.blocks.documentcardlistbase" />
+  <key id="linktodetailpage">link to the complete list</key>
+  <key id="linktodetailpage-help">Activates or deactivates the link to the complete list of documents in the category. In any case, this link will be omitted on the details page of the category.</key>
+  <key id="title">details of a document category</key>
+</i18n>

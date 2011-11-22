@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.download.bo.blocks.documentcardcontextuallist" lcid="en_GB">
+	<include id="m.download.bo.blocks.documentcardlistbase" />
+  <key id="showdetailsincurrenttopic">details page in the topic</key>
+  <key id="showdetailsincurrenttopic-help">Select "Yes" in order for the document details to be displayed in the current topic, select "No" to have the details displayed in their primary topic.</key>
+  <key id="title">list of the topic's documents</key>
+</i18n>
