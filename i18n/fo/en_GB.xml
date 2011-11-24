@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.download.fo" lcid="en_GB">
+  <key id="all-categories">all categories</key>
+  <key id="all-documentcards">all documents</key>
+  <key id="back-to-topic">back to topic {topic}</key>
+  <key id="categories">categories</key>
+  <key id="category-title">category: {category}</key>
+  <key id="contextual-categories">topic categories</key>
+  <key id="contextual-documentcards">topic's documents</key>
+  <key id="documentcards-filtered-by-topic-1">this list is restricted to documents in the topic</key>
+  <key id="documentcards-filtered-by-topic-2">. In order to see the full content of the topic, </key>
+  <key id="documentcards-filtered-by-topic-3">click here</key>
+  <key id="documentcards-filtered-by-topic-4">.</key>
+  <key id="documentcards-from-website-title">site's documents</key>
+  <key id="topic-title">topic: {topic}</key>
+  <key id="view-complete-list">see the complete list</key>
+</i18n>

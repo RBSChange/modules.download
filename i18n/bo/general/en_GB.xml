@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.download.bo.general" lcid="en_GB">
+  <key id="category-selection-title">Selection of categories in which the documents must be placed</key>
+  <key id="media-selection-title">selection of medias to import</key>
+  <key id="module-name">downloadable documents</key>
+  <key id="some-pages-already-initialized">Some of the global pages have already been initialised for this site.</key>
+  <key id="system-folder-name">downloadable documents</key>
+  <key id="topic-already-contains-some-of-this-pages">This topic already contains some of the pages.</key>
+  <key id="topic-selection-title">selection of topics in which the documents must be placed</key>
+</i18n>

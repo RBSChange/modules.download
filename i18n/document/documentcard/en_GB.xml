@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.download.document.documentcard" lcid="en_GB">
+  <include id="m.generic.document.document"/>
+  <key id="category">categories</key>
+  <key id="category-help">Document's categories.</key>
+  <key id="description">description</key>
+  <key id="description-help">Document description, displayed on the site.</key>
+  <key id="document-name">downloadable document</key>
+  <key id="file">file</key>
+  <key id="file-help">Downloadable file.</key>
+  <key id="label">label</key>
+  <key id="label-help">Name of the downloadable file.</key>
+  <key id="topic">topics</key>
+  <key id="topic-help">Topics in which this document must be placed.</key>
+  <key id="visual">visual element</key>
+  <key id="visual-help">Visual element to display on the site to illustrate the document.</key>
+</i18n>

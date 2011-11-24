@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.download.bo.actions" lcid="en_GB">
+  <key id="create_">create</key>
+  <key id="createcategory">create a category</key>
+  <key id="createcategoryfolder">create a categories folder</key>
+  <key id="createdocumentcard">create downloadable document</key>
+  <key id="createtreefolder">create a sorting folder</key>
+  <key id="initdefaultstructure">initialise the global pages of a site</key>
+  <key id="initlocalstructure">initialise the pages of a topic</key>
+  <key id="openimportmediasdialog">import medias from the media library</key>
+</i18n>
