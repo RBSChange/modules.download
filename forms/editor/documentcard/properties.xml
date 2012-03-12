@@ -6,6 +6,6 @@
 		<field name="topic" />
 		<field name="category" />
 		<field name="description" />
-		<field name="visual" allowfile="true" />
+		<field name="visual" allowfile="true" mediafoldername="Module download inbox" />
 	</section>
 </panel>
