@@ -65,7 +65,7 @@ class download_BlockDocumentcardAction extends website_BlockAction
 		{
 			return array(
 				'label' => $doc->getLabel(), 
-				'description' => f_util_StringUtils::htmlToText($doc->getDescription())
+				'description' => f_util_HtmlUtils::htmlToText($doc->getDescription())
 			);
 		}
 		return array();

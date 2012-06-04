@@ -174,7 +174,7 @@ abstract class download_BlockAbstractDocumentcardListAction extends website_Bloc
 			$description = (f_util_ClassUtils::methodExists($doc, 'getDescription')) ? $doc->getDescription() : '';
 			return array(
 				'label' => $doc->getLabel(), 
-				'description' => f_util_StringUtils::htmlToText($description)
+				'description' => f_util_HtmlUtils::htmlToText($description)
 			);
 		}
 		return array();
